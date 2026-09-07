@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>PDA · Portal atualizado — redirecionando</title>
+  <meta name="description" content="O Portal de Aprendizagem PDA mudou de endereço. Você será redirecionado automaticamente." />
+  <meta http-equiv="refresh" content="6;url=https://pda-portal-2026.web.app/" />
+  <link rel="canonical" href="https://pda-portal-2026.web.app/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --gold: #c9a227; --gold-soft: #e8d48b; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #000;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body {
+      min-height: 100dvh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .stars {
+      position: fixed; inset: 0; pointer-events: none; opacity: 0.45;
+      background-image:
+        radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,0.14), transparent),
+        radial-gradient(1px 1px at 80px 120px, rgba(255,255,255,0.1), transparent),
+        radial-gradient(1.5px 1.5px at 160px 60px, rgba(255,255,255,0.12), transparent),
+        radial-gradient(1px 1px at 240px 180px, rgba(255,255,255,0.08), transparent);
+      background-size: 280px 220px;
+    }
+    .orb {
+      position: fixed;
+      width: min(520px, 90vw);
+      height: min(520px, 90vw);
+      border-radius: 50%;
+      background: var(--gold);
+      filter: blur(120px);
+      opacity: 0.16;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: pulse 6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.12; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.2; transform: translate(-50%, -50%) scale(1.06); }
+    }
+    .card {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      padding: 2.25rem 1.75rem;
+      border-radius: 1.5rem;
+      background: linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.55);
+      animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .line {
+      height: 1px;
+      width: 56px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    h1 {
+      font-size: clamp(1.65rem, 5vw, 2.1rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .quote {
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 1.5rem;
+    }
+    .msg {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 1.75rem;
+    }
+    .msg strong { color: #fff; font-weight: 500; }
+    .bar {
+      height: 2px;
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
+      border-radius: 999px;
+      animation: load 5.5s linear forwards;
+    }
+    @keyframes load {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    .countdown {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.5rem;
+    }
+    .countdown b { color: var(--gold-soft); font-weight: 500; }
+    a.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 999px;
+      background: #fff;
+      color: #0a0a0a;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+    a.btn:hover { transform: scale(1.03); background: #f5f5f5; }
+    .footer {
+      margin-top: 1.75rem;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="orb" aria-hidden="true"></div>
+
+  <main class="card" role="main">
+    <p class="label">Maison PDA · Collection 26</p>
+    <div class="line"></div>
+    <h1>O portal mudou de casa</h1>
+    <p class="quote">
+      “A única forma de fazer um excelente trabalho é amar o que você faz.”
+      <br /><span style="opacity:0.7;font-size:0.8em">— Steve Jobs</span>
+    </p>
+    <p class="msg">
+      O <strong>PDA · Portal de Aprendizagem</strong> do Prof. <strong>Rodrigo G. Pelages</strong> foi atualizado.
+      Em instantes você será levado ao novo ambiente — mais moderno, organizado e pronto para as suas aulas.
+    </p>
+    <div class="bar" aria-hidden="true"><span></span></div>
+    <p class="countdown">Redirecionando em <b id="sec">5</b> segundos…</p>
+    <a class="btn" href="https://pda-portal-2026.web.app/">
+      Ir agora
+      <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+    <p class="footer">Informática para Internet · IPI</p>
+  </main>
+
+  <script>
+    (function () {
+      var destino = 'https://pda-portal-2026.web.app/';
+      var restante = 5;
+      var el = document.getElementById('sec');
+      var t = setInterval(function () {
+        restante -= 1;
+        if (el) el.textContent = String(Math.max(restante, 0));
+        if (restante <= 0) {
+          clearInterval(t);
+          window.location.replace(destino);
+        }
+      }, 1000);
+      // Garantia extra além do meta refresh
+      setTimeout(function () {
+        window.location.replace(destino);
+      }, 5500);
+    })();
+  </script>
+</body>
+</html>
